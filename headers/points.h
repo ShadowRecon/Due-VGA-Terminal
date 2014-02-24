@@ -1,4 +1,5 @@
 #include "Arduino.h"
+#include <math.h>
 
 struct TPoint 
 {
@@ -22,14 +23,46 @@ TPoint point(int x; int y)
 }
 
 {=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-TPoint point(int x; int y);
+int Distance(TPoint P1, TPointp P2);
 Contributors: ShadowRecon.
-Description: Creates a TPoint from x and y.
+Description: Returns distance between 2 TPoints.
 Date Created: June 3rd, 2013. By ShadowRecon.
 Last Modified: June 3rd, 2013. By ShadowRecon.
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=}
 
-int Distance(int X1, int Y1, int X2, int Y2)
+int Distance(TPoint P1, TPoint p2)
 {
-  return sqrt(pow(X2-X1, 2) + pow(X2-X1, 2);
+  return sqrt(pow(P2.x-P1.x, 2) + pow(P2.y-P2.y, 2));
 }
+
+
+{=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+float getPointAngle(TPoint P1, TPoint P2)
+Contributors: ShadowRecon.
+Description: Returns angle in radians between 2 TPoints.
+Date Created: June 3rd, 2013. By ShadowRecon.
+Last Modified: June 3rd, 2013. By ShadowRecon.
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=}
+
+float getPointAngleRadians(TPoint P1, TPoint P2)
+{
+  return aTan2(P1.Y - P2.Y, P1.X - P2.X)
+}
+
+{=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+float getPointAngleDegrees(TPoint P1, TPoint P2)
+Contributors: ShadowRecon.
+Description: Returns angle in degrees between 2 TPoints.
+Date Created: June 3rd, 2013. By ShadowRecon.
+Last Modified: June 3rd, 2013. By ShadowRecon.
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=}
+
+float getPointAngleDegrees(TPoint P1, TPoint P2)
+{
+  return aTan2(P1.Y - P2.Y, P1.X - P2.X)
+}
+
+
+
+
+

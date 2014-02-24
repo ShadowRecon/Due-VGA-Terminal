@@ -25,14 +25,14 @@ TPoint point(int x; int y)
 }
 
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-int Distance(TPoint P1, TPoint p2);
+int distance(TPoint P1, TPoint p2);
 Contributors: ShadowRecon.
 Description: Returns distance between 2 TPoints.
 Date Created: June 3rd, 2013. By ShadowRecon.
 Last Modified: Feb. 24th, 2014. By ShadowRecon.
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
 
-int Distance(TPoint P1, TPoint p2)
+int distance(TPoint P1, TPoint p2)
 {
   return sqrt(pow(P2.x-P1.x, 2) + pow(P2.y-P2.y, 2));
 }
@@ -65,15 +65,18 @@ float getPointAngleDegrees(TPoint P1, TPoint P2)
 }
 
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-TPoint rotatePoint(TPoint TP);
+TPoint rotatePoint(TPoint p, float mx, float my, float angle);
 Contributors: ShadowRecon.
 Description: Rotates point (p) around point (cx,cy) in radians (A).
 Date Created: Feb. 24th, 2014. By ShadowRecon.
 Last Modified: Feb. 24th, 2014. By ShadowRecon.
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
 
-Result.X := Round(mx + cos(angle) * (p.x - mx) - sin(angle) * (p.y - my));  
-Result.Y := Round(my + sin(angle) * (p.x - mx) + cos(angle) * (p.y- my));
+TPoint rotatePoint(TPoint p, float mx, float my, float angle)
+{
+  Result.X := Round(mx + cos(angle) * (p.x - mx) - sin(angle) * (p.y - my));  
+  Result.Y := Round(my + sin(angle) * (p.x - mx) + cos(angle) * (p.y- my));
+}
 
 
 

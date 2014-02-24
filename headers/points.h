@@ -65,17 +65,19 @@ float getPointAngleDegrees(TPoint P1, TPoint P2)
 }
 
 /*=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
-TPoint rotatePoint(TPoint p, float mx, float my, float angle);
+TPoint rotatePoint(TPoint p, float cx, float cy, float angle);
 Contributors: ShadowRecon.
 Description: Rotates point (p) around point (cx,cy) in radians (A).
 Date Created: Feb. 24th, 2014. By ShadowRecon.
 Last Modified: Feb. 24th, 2014. By ShadowRecon.
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
 
-TPoint rotatePoint(TPoint p, float mx, float my, float angle)
+TPoint rotatePoint(TPoint p, float cx, float cy, float angle)
 {
-  Result.X := Round(mx + cos(angle) * (p.x - mx) - sin(angle) * (p.y - my));  
-  Result.Y := Round(my + sin(angle) * (p.x - mx) + cos(angle) * (p.y- my));
+  TPoint Result;
+  Result.X := round(cx + cos(angle) * (p.x - cx) - sin(angle) * (p.y - cy));  
+  Result.Y := round(cy + sin(angle) * (p.x - cx) + cos(angle) * (p.y - cy));
+  return Result;
 }
 
 
